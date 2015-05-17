@@ -25,25 +25,44 @@ namespace JobSpecCollector
         public void CollectAndSaveJobSpecs()
         {
             IEnumerable<JobSpec> jobSpecs;
-            try {
+            if (!GetJobSpecs(out jobSpecs)) return;
+            foreach (var jobSpec in jobSpecs)
+            {
+                SaveJobSpec(jobSpec);
+            }
+        }
+
+        private bool GetJobSpecs(out IEnumerable<JobSpec> jobSpecs)
+        {
+            try
+            {
                 jobSpecs = _getter.GetJobSpecs();
+                return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                _logger.Write("Error in '_getter.GetJobSpecs' (CollectAndSaveJobSpecs)");
-                _logger.Write(ex);
-                return;
+                jobSpecs = null;
+                LogException(ex, "Error in '_getter.GetJobSpecs' (GetJobSpecs)");
+                return false;
             }
-            foreach(var jobSpec in jobSpecs)
+        }
+
+        private void SaveJobSpec(JobSpec jobSpec)
+        {
+            try
             {
-                try {
-                    _persistence.SaveJobSpec(jobSpec);
-                }catch(Exception ex)
-                {
-                    _logger.Write("Error in '_persistence.SaveJobSpec(jobSpec)' (CollectAndSaveJobSpecs)");
-                    _logger.Write(ex);
-                }
+                _persistence.SaveJobSpec(jobSpec);
             }
+            catch (Exception ex)
+            {
+                LogException(ex, "Error in '_persistence.SaveJobSpec(jobSpec)' (SaveJobSpec)");
+            }
+        }
+
+        private void LogException(Exception ex, string message)
+        {
+            _logger.Write(message);
+            _logger.Write(ex);
         }
     }
 }
