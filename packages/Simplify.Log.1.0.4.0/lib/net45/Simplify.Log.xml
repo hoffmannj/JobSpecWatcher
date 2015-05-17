@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Simplify.Log</name>
+    </assembly>
+    <members>
+        <member name="T:Simplify.Log.IHideObjectMembers">
+            <summary>
+            Helper interface used to hide the base <see cref="T:System.Object" />
+            members from the fluent API to make it much cleaner
+            in Visual Studio intellisense.
+            </summary>
+        </member>
+        <member name="M:Simplify.Log.IHideObjectMembers.GetType">
+            <summary>
+            Gets the type.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Simplify.Log.IHideObjectMembers.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:Simplify.Log.IHideObjectMembers.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:Simplify.Log.IHideObjectMembers.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/>, is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Simplify.Log.ILogger">
+            <summary>
+            Logger class interface
+            </summary>
+        </member>
+        <member name="M:Simplify.Log.ILogger.Write(System.String)">
+            <summary>
+            Write text message to log file
+            </summary>
+            <param name="message">Text message</param>
+            <returns>Text written to log file (contain time information etc.)</returns>
+        </member>
+        <member name="M:Simplify.Log.ILogger.Write(System.Exception)">
+            <summary>
+            Write data of an exception to log file
+            </summary>
+            <param name="e">Exception to get data from</param>
+            <returns>Text written to log file (contain time information etc.)</returns>
+        </member>
+        <member name="M:Simplify.Log.ILogger.WriteWeb(System.Exception)">
+            <summary>
+            Write data of an exception to log file and returs written data formatted with HTML line breaks
+            </summary>
+            <param name="e">Exception to get data from</param>
+            <returns>Text written to log file (contain time information etc.) formatted with HTML line breaks</returns>
+        </member>
+        <member name="T:Simplify.Log.Logger">
+            <summary>
+            Log class
+            </summary>
+        </member>
+        <member name="M:Simplify.Log.Logger.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Simplify.Log.Logger"/> class.
+            </summary>
+            <param name="configSectionName">Name of the configuration section in the configuration file.</param>
+        </member>
+        <member name="M:Simplify.Log.Logger.Write(System.String)">
+            <summary>
+            Write text message to log file
+            </summary>
+            <param name="message">Text message</param>
+            <returns>Text written to log file (contain time information etc.)</returns>
+        </member>
+        <member name="M:Simplify.Log.Logger.Write(System.Exception)">
+            <summary>
+            Write data of an exception to log file
+            </summary>
+            <param name="e">Exception to get data from</param>
+            <returns>Text written to log file (contain time information etc.)</returns>
+        </member>
+        <member name="M:Simplify.Log.Logger.WriteWeb(System.Exception)">
+            <summary>
+            Write data of an exception to log file and returns written data formatted with HTML line breaks
+            </summary>
+            <param name="e">Exception to get data from</param>
+            <returns>Text written to log file (contain time information etc.) formatted with HTML line breaks</returns>
+        </member>
+        <member name="P:Simplify.Log.Logger.FileSystem">
+            <summary>
+            Gets or sets the file system for Logger IO operations.
+            </summary>
+            <value>
+            The file system for Logger IO operations.
+            </value>
+        </member>
+        <member name="P:Simplify.Log.Logger.Default">
+            <summary>
+            Gets or sets the default logger instance.
+            </summary>
+            <value>
+            The default logger instance.
+            </value>
+            <exception cref="T:System.ArgumentNullException">value</exception>
+        </member>
+        <member name="P:Simplify.Log.Logger.Settings">
+            <summary>
+            Gets the logger settings.
+            </summary>
+            <value>
+            The logger settings.
+            </value>
+        </member>
+        <member name="T:Simplify.Log.LoggerException">
+            <summary>
+            The exception class using for Logger exceptions
+            </summary>
+        </member>
+        <member name="M:Simplify.Log.LoggerException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Simplify.Log.LoggerException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="T:Simplify.Log.LoggerPathType">
+            <summary>
+            Represent logger path type
+            </summary>
+        </member>
+        <member name="F:Simplify.Log.LoggerPathType.Relative">
+            <summary>
+            The relative path type
+            </summary>
+        </member>
+        <member name="F:Simplify.Log.LoggerPathType.FullPath">
+            <summary>
+            The full path type
+            </summary>
+        </member>
+        <member name="T:Simplify.Log.LoggerSettings">
+            <summary>
+            Represent logger settings class
+            </summary>
+        </member>
+        <member name="M:Simplify.Log.LoggerSettings.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Simplify.Log.LoggerSettings"/> class.
+            </summary>
+            <param name="configSectionName">Name of the logger configuration section in the configuration file.</param>
+        </member>
+        <member name="P:Simplify.Log.LoggerSettings.FileName">
+            <summary>
+            Log file name
+            </summary>
+        </member>
+        <member name="P:Simplify.Log.LoggerSettings.MaxFileSize">
+            <summary>
+            Maximum file size (kb)
+            </summary>
+        </member>
+        <member name="P:Simplify.Log.LoggerSettings.PathType">
+            <summary>
+            Path type
+            </summary>
+        </member>
+        <member name="P:Simplify.Log.LoggerSettings.ShowTraceOutput">
+            <summary>
+            Gets a value indicating whether logger messages should be shown in trace window.
+            </summary>
+        </member>
+    </members>
+</doc>
