@@ -1,13 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.22823.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobSpecCollectorService", "JobSpecCollectorService\JobSpecCollectorService.csproj", "{A136FC68-CAAF-4353-87A4-F418FA0C244C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobSpecCollector", "JobSpecCollector\JobSpecCollector.csproj", "{29E0BD68-2AAF-40C3-817A-ABAED6B36AA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobSpecCollector.Tests", "JobSpecCollector.Tests\JobSpecCollector.Tests.csproj", "{9AFF9AD8-F436-4A17-A3C6-F2C07BEC6BF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobSpecApi", "JobSpecApi\JobSpecApi.csproj", "{00395005-BA8C-493A-A49C-A57FC2C995EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobSpecApi.Tests", "JobSpecApi.Tests\JobSpecApi.Tests.csproj", "{304FD054-B111-4C2F-AC40-65935AD731CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobSpecCommon", "JobSpecCommon\JobSpecCommon.csproj", "{F7444403-2D4F-421E-A4C5-FE717645D755}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobSpecDB", "JobSpecDB\JobSpecDB.csproj", "{776A4E79-75E6-4EAC-BB9D-D48B06DD5587}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +35,22 @@ Global
 		{9AFF9AD8-F436-4A17-A3C6-F2C07BEC6BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AFF9AD8-F436-4A17-A3C6-F2C07BEC6BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AFF9AD8-F436-4A17-A3C6-F2C07BEC6BF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00395005-BA8C-493A-A49C-A57FC2C995EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00395005-BA8C-493A-A49C-A57FC2C995EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00395005-BA8C-493A-A49C-A57FC2C995EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00395005-BA8C-493A-A49C-A57FC2C995EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{304FD054-B111-4C2F-AC40-65935AD731CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{304FD054-B111-4C2F-AC40-65935AD731CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{304FD054-B111-4C2F-AC40-65935AD731CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{304FD054-B111-4C2F-AC40-65935AD731CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7444403-2D4F-421E-A4C5-FE717645D755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7444403-2D4F-421E-A4C5-FE717645D755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7444403-2D4F-421E-A4C5-FE717645D755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7444403-2D4F-421E-A4C5-FE717645D755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{776A4E79-75E6-4EAC-BB9D-D48B06DD5587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{776A4E79-75E6-4EAC-BB9D-D48B06DD5587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{776A4E79-75E6-4EAC-BB9D-D48B06DD5587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{776A4E79-75E6-4EAC-BB9D-D48B06DD5587}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
